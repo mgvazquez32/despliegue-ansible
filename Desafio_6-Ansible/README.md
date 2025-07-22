@@ -1,6 +1,6 @@
 # Desafío 6 - Ansible: LAMP + WordPress
 
-Este repositorio contiene un proyecto modular con Ansible y Roles para desplegar automáticamente Apache, PHP, MySQL y WordPress en una instancia EC2 Ubuntu en AWS Academy.
+Proyecto modular con Ansible y Roles para desplegar automáticamente Apache, PHP, MySQL y WordPress en una instancia EC2 Ubuntu.
 
 ## Estructura
 
