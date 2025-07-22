@@ -1,0 +1,10 @@
+php_packages:
+  - php
+  - php-mysql
+  - php-cli
+  - php-curl
+  - php-gd
+  - php-mbstring
+  - php-xml
+  - php-xmlrpc
+  - libapache2-mod-php

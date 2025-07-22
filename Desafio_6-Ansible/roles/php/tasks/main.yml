@@ -1,0 +1,5 @@
+- name: Instalar paquetes de PHP
+  apt:
+    name: "{{ php_packages }}"
+    state: present
+    update_cache: yes
