@@ -11,7 +11,7 @@ Proyecto modular con Ansible y Roles para desplegar automáticamente Apache, PHP
 ## Requisitos
 
 - Bastion de AWS Academy.
-- Acceso a EC2 Ubuntu con clave PEM.
+- Ubuntu Local con clave PEM.
 - Ansible instalado.
 
 ## Uso
