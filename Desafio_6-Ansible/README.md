@@ -1,25 +1,65 @@
-# Desafío 6 - Ansible: LAMP + WordPress
+🔧 Requisitos previos
+Tener una instancia corriendo Debian 12 (bookworm).
 
-Proyecto modular con Ansible y Roles para desplegar automáticamente Apache, PHP, MySQL y WordPress en una instancia EC2 Ubuntu.
+Conexión SSH válida (clave .pem si es AWS).
 
-## Estructura
+Instalar Ansible en tu máquina local:
 
-- `inventory.ini`: define el host remoto.
-- `playbook.yaml`: playbook principal.
-- `roles/`: cada rol contiene sus tareas y variables.
+bash
+Copiar
+Editar
+pipx install --include-deps ansible
+Clonar este repositorio:
 
-## Requisitos
+bash
+Copiar
+Editar
+git clone https://github.com/mgvazquez32/despliegue-ansible.git
+cd despliegue-ansible/Desafio_6-Ansible
+🗂 Estructura del proyecto
+bash
+Copiar
+Editar
+Desafio_6-Ansible/
+├── inventory.ini
+├── playbook.yaml
+├── roles/
+│   ├── apache/
+│   ├── php/
+│   ├── mysql/
+│   └── wordpress/
+└── pruebas/
+    └── pruebabastion.png
+📝 Configuración del inventario
+El archivo inventory.ini debe contener la IP pública de tu instancia bajo un nombre de host:
 
-- Bastion de AWS Academy.
-- Ubuntu Local con clave PEM.
-- Ansible instalado.
+ini
+Copiar
+Editar
+[wordpress]
+ec2-54-90-209-242.compute-1.amazonaws.com ansible_user=admin ansible_ssh_private_key_file=~/Descargas/Bastion.pem
+Asegurate de reemplazar la IP y la ruta de tu clave según tu caso.
 
-## Uso
+🚀 Ejecución del Playbook
+Desde el directorio raíz del proyecto:
 
-```bash
+bash
+Copiar
+Editar
 ansible-playbook -i inventory.ini playbook.yaml
-```
+Este Playbook ejecutará las siguientes tareas:
 
-## Pruebas
+Instala y habilita Apache.
 
-Ver carpeta `pruebas/` con evidencias de ejecución exitosa.
+Instala PHP y módulos necesarios.
+
+Instala y habilita MariaDB.
+
+Descarga, extrae y configura WordPress.
+
+📷 Evidencias
+Se incluye una captura del resultado final en la carpeta pruebas:
+
+pruebabastion.png
+
+
