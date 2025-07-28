@@ -1,11 +1,15 @@
-- name: Instalar MySQL Server
+- name: Actualizar el caché de paquetes APT
   apt:
-    name: mysql-server
-    state: present
     update_cache: yes
+    cache_valid_time: 3600
+
+- name: Instalar el servidor de base de datos predeterminado (MySQL/MariaDB)
+  apt:
+    name: default-mysql-server
+    state: present
 
 - name: Asegurar que el servicio esté habilitado y corriendo
   service:
-    name: mysql
+    name: mariadb
     state: started
     enabled: yes
